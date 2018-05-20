@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>base()</title>
+        <script>
+         function show_hidden(name) {
+             var x = document.getElementById(name);
+             if (x.style.display === "none") {
+                 x.style.display = "block";
+             } else {
+                 x.style.display = "none";
+             }
+         }
+         var countFirst = 0;
+         var countSecond = 0;
+         document.addEventListener('keypress',
+                                   function(e) {
+                                       console.log('base');
+                                       console.log('keypress');
+                                       console.log('e.keyCode: ' + e.keyCode);
+                                       if (e.keyCode === 0x30) {
+                                           // show_hidden("First");
+                                           document.getElementById("First").innerHTML = countFirst;
+                                           countFirst++;
+                                       }
+                                       if (e.keyCode === 0x31) {
+                                           // show_hidden("Second");
+                                           document.getElementById("Second").innerHTML = countSecond;
+                                           countSecond++;
+                                       }
+                                   },
+                                   false);
+         document.addEventListener('keydown',
+                                   function(e) {
+                                       console.log('base');
+                                       console.log('keydown');
+                                       console.log('e.keyCode: ' + e.keyCode);
+                                       if (e.keyCode === 107) {
+                                           console.log('KEY_CHANNELUP');
+                                       }
+                                       else if (e.keyCode === 57457) {
+                                           console.log('KEY_MENU');
+                                       }
+                                   },
+                                   false);
+        </script>
+    </head>
+    <body>
+        <p id="First">A</p>
+        <p id="Second">B</p>
+    </body>
+</html>
