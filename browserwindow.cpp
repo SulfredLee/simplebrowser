@@ -406,6 +406,14 @@ void BrowserWindow::keyPressEvent(QKeyEvent *event)
     // keypressevent has never been called
     qDebug() << "[" << __FUNCTION__ << ":" << __LINE__ << "] sulfred debug keypress event : " << event->key();
     qDebug("[%s:%d] sulfred debug focusWidget: %p", __FUNCTION__, __LINE__, QApplication::focusWidget());
+    qDebug("[%s:%d] sulfred debug m_tabWidget->currentWebView: %p, m_tabWidget->currentWidget: %p, m_tabWidget->currentWebView->focusWidget: %p, m_tabWidget->focusWidget: %p, m_tabWidget->currentWebView->page->view->focusWidget: %p"
+           , __FUNCTION__
+           , __LINE__
+           , m_tabWidget->currentWebView()
+           , m_tabWidget->currentWidget()
+           , m_tabWidget->currentWebView()->focusWidget()
+           , m_tabWidget->focusWidget()
+           , m_tabWidget->currentWebView()->page()->view()->focusWidget());
     if (event->key() == 0x32)
     {
         qDebug() << "[" << __FUNCTION__ << ":" << __LINE__ << "] sulfred debug update latest focus";
